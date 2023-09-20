@@ -4,11 +4,11 @@ import React from "react";
 
 const Sidebar: React.FC<{}> = () => {
   return (
-    <div className="h-[100vh] p-5 md:p-1 border-r-[1px]">
+    <div className=" p-5 md:p-1">
       {/* icon */}
       <div className="flex flex-row items-center justify-center pt-10 gap-3">
         <img
-          src="/public/images/Logo.svg"
+          src="/images/Logo.svg"
           className=""
         />
         <h1 className="md:hidden lg:flex font-bold text-lg">

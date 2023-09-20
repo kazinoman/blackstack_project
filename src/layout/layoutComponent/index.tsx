@@ -13,7 +13,7 @@ const Layout: React.FC<{}> = () => {
           sm={0}
           md={2}
           lg={4}>
-          <div className="bg-slate-50">
+          <div className="bg-slate-50 border-r-[1px] h-full">
             <SideBar />
           </div>
         </Col>

@@ -24,7 +24,7 @@ const BalanceCard: React.FC<IBalanceCardProps> = ({ cardStatus, cardName, totalA
   };
 
   return (
-    <div className="w-[23.5rem] p-4 rounded-lg bg-white">
+    <div className="w-[23.4rem] p-4 rounded-lg bg-white">
       <div className="flex flex-row items-center justify-start">
         <div className="flex flex-col gap-5">
           <div className="flex flex-row gap-3">
@@ -43,7 +43,7 @@ const BalanceCard: React.FC<IBalanceCardProps> = ({ cardStatus, cardName, totalA
         {data && <TinyArea {...config} />}
       </div>
       <div className="flex flex-row justify-between items-center mt-5">
-        <h1>{status}</h1>
+        <h1 className="text-gray-500 text-xs">{status}</h1>
         <h1 className={`text-sm font-medium ${totalProfit < 20 ? "text-red-600" : "text-green-600"}`}>
           {totalProfit < 20 ? "-" : "+"}${totalProfit}
         </h1>

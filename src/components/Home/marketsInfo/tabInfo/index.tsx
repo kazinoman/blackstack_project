@@ -19,7 +19,7 @@ const TabInfo: React.FC<ITabInfoProps> = ({ data }: ITabInfoProps) => {
         return (
           <div
             key={data.id}
-            className="p-2 flex flex-row items-center justify-between">
+            className="p-2 flex flex-row items-center justify-between my-2 rounded-lg hover:bg-gray-200 hover:duration-700 delay-150">
             <h1 className="text-left w-20 font-semibold text-sm">{data.id}</h1>
             <h1 className="text-left w-20 text-gray-600">{data.coinName}</h1>
             <h1 className="text-left w-10">${data.price}</h1>

@@ -1,7 +1,7 @@
 import React from "react";
 import { Col, Row } from "antd";
 
-import { BalanceCardContainer, MarketInfoContainer } from "@/components";
+import { AssetSection, BalanceCardContainer, ConvertComponent, History, MarketInfoContainer } from "@/components";
 
 const Home: React.FC<{}> = () => {
   return (
@@ -36,6 +36,36 @@ const Home: React.FC<{}> = () => {
           <div className="rounded-lg p-3 bg-white">
             <MarketInfoContainer />
           </div>
+        </Col>
+      </Row>
+
+      {/* Lower Section */}
+      <Row
+        gutter={[20, { xs: 8, sm: 16, md: 24, lg: 32 }]}
+        className="mt-5">
+        <Col
+          xs={24}
+          sm={6}
+          md={6}
+          lg={6}
+          className="">
+          <AssetSection />
+        </Col>
+        <Col
+          xs={24}
+          sm={6}
+          md={6}
+          lg={6}
+          className="border-0">
+          <ConvertComponent />
+        </Col>
+        <Col
+          xs={24}
+          sm={12}
+          md={12}
+          lg={12}
+          className="border-0">
+          <History />
         </Col>
       </Row>
     </div>
