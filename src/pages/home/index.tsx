@@ -1,7 +1,7 @@
 import React from "react";
 import { Col, Row } from "antd";
 
-import { AssetSection, BalanceCardContainer, ConvertComponent, History, MarketInfoContainer } from "@/components";
+import { AssetSection, BalanceCardContainer, ConvertComponent, History, MarketInfoContainer, Graph } from "@/components";
 
 const Home: React.FC<{}> = () => {
   return (
@@ -23,7 +23,9 @@ const Home: React.FC<{}> = () => {
           lg={16}
           xl={14}>
           {/* Plot */}
-          <div className="border-2">col 18</div>
+          <div className="p-5 bg-white p-1 rounded-lg">
+            <Graph />
+          </div>
         </Col>
         <Col
           span={8}
@@ -33,7 +35,7 @@ const Home: React.FC<{}> = () => {
           lg={8}
           xl={10}>
           {/* Tabs */}
-          <div className="rounded-lg p-3 bg-white">
+          <div className="rounded-lg p-3 bg-white h-full">
             <MarketInfoContainer />
           </div>
         </Col>
@@ -46,7 +48,7 @@ const Home: React.FC<{}> = () => {
         <Col
           xs={24}
           sm={6}
-          md={6}
+          md={12}
           lg={6}
           className="">
           <AssetSection />
@@ -54,7 +56,7 @@ const Home: React.FC<{}> = () => {
         <Col
           xs={24}
           sm={6}
-          md={6}
+          md={12}
           lg={6}
           className="border-0">
           <ConvertComponent />
@@ -62,7 +64,7 @@ const Home: React.FC<{}> = () => {
         <Col
           xs={24}
           sm={12}
-          md={12}
+          md={24}
           lg={12}
           className="border-0">
           <History />

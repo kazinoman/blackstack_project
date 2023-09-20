@@ -6,3 +6,4 @@ export { default as TabInfo } from "./Home/marketsInfo/tabInfo";
 export { default as AssetSection } from "./Home/asset";
 export { default as ConvertComponent } from "./Home/convert";
 export { default as History } from "./Home/history";
+export { default as Graph } from "./Home/graph/";
