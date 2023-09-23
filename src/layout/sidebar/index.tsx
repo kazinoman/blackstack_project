@@ -1,10 +1,13 @@
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { Divider } from "antd";
 import React from "react";
+import { useLocation, Link } from "react-router-dom";
 
 const Sidebar: React.FC<{}> = () => {
+  const location = useLocation();
+
   return (
-    <div className=" p-5 md:p-1">
+    <div className=" p-5 md:p-1 min-h-[100vh]">
       {/* icon */}
       <div className="flex flex-row items-center justify-center pt-10 gap-3">
         <img
@@ -26,29 +29,33 @@ const Sidebar: React.FC<{}> = () => {
               className="w-[70%] md:w-[90%] lg:w-[90%] xl:w-[80%] 2xl:w-[75%] flex flex-col">
               {data.common.map((data: any, i: number) => {
                 return (
-                  <div
-                    className="flex flex-row items-center justify-start gap-2 my-2 p-3 bg-[#D5E6FB] rounded-2xl text-[blue]"
-                    key={i}>
-                    <Icon
-                      icon={data.icon}
-                      className="w-7 h-7 lg:w-5 lg:h-5  ml-14 md:ml-0 lg:ml-0 xl:ml-6 2xl:ml-10"
-                    />
-                    <h2 className="hidden lg:inline ">{data.name}</h2>
-                  </div>
+                  <Link to={data.route}>
+                    <div
+                      className={`flex flex-row items-center justify-start gap-2 my-2 p-3 rounded-2xl  ${location.pathname === data.route ? "bg-[#D5E6FB] shadow-sm delay-200 duration-500 text-[blue]" : ""}`}
+                      key={i}>
+                      <Icon
+                        icon={data.icon}
+                        className="w-7 h-7 lg:w-5 lg:h-5  ml-14 md:ml-0 lg:ml-0 xl:ml-6 2xl:ml-10"
+                      />
+                      <h2 className="hidden lg:inline ">{data.name}</h2>
+                    </div>
+                  </Link>
                 );
               })}
               <Divider />
               {data.auth.map((data: any, i: number) => {
                 return (
-                  <div
-                    className="flex flex-row items-center justify-start gap-2 my-4 p-3 bg-[#D5E6FB] rounded-2xl text-[blue]"
-                    key={i}>
-                    <Icon
-                      icon={data.icon}
-                      className="w-7 h-7 lg:w-5 lg:h-5  ml-14 md:ml-0 lg:ml-0 xl:ml-6 2xl:ml-10"
-                    />
-                    <h2 className="hidden lg:inline ">{data.name}</h2>
-                  </div>
+                  <Link to={data.route}>
+                    <div
+                      className={`flex flex-row items-center justify-start gap-2 my-2 p-3 rounded-2xl  ${location.pathname === data.route ? "bg-[#D5E6FB] shadow-sm delay-200 duration-500 text-[blue]" : ""}`}
+                      key={i}>
+                      <Icon
+                        icon={data.icon}
+                        className="w-7 h-7 lg:w-5 lg:h-5  ml-14 md:ml-0 lg:ml-0 xl:ml-6 2xl:ml-10"
+                      />
+                      <h2 className="hidden lg:inline ">{data.name}</h2>
+                    </div>
+                  </Link>
                 );
               })}
             </div>
@@ -61,7 +68,7 @@ const Sidebar: React.FC<{}> = () => {
 
 export default Sidebar;
 
-const SideNavigationList = [
+export const SideNavigationList = [
   {
     common: [
       { name: "Dashboard", icon: "material-symbols:dashboard-rounded", route: "/" },
